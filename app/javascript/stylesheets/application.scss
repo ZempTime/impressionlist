@@ -1,0 +1,39 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.public-table {
+  display: grid;
+  grid-template-columns:
+  minmax(20px, 0.33fr)
+  minmax(150px, 1.67fr)
+  minmax(50px, 1fr)
+  minmax(150px, 1fr)
+  minmax(50px, 1fr)
+  minmax(50px, 1fr);
+
+  > thead, tbody, tr {
+    display: contents;
+  }
+
+}
+
+th {
+  text-align: left;
+  font-weight: normal;
+  font-size: 1.1rem;
+  background-color: theme("colors.gray.50");
+}
+
+tr:nth-child(even) td {
+  background-color: theme('colors.gray.50');
+}
+
+td {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: grid;
+  align-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

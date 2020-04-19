@@ -1,0 +1,15 @@
+{
+  "name": "zondicons",
+  "version": "1.2.0",
+  "description": "A set of free premium SVG icons for you to use on your digital products.",
+  "homepage": "https://www.zondicons.com/",
+  "license": "CC-BY-4.0",
+  "author": "Steve Schoger",
+  "module": "./index.mjs",
+  "devDependencies": {
+    "turbocommons-ts": "^0.8.3"
+  },
+  "maintainers": [
+    "Mathis Wiehl (@fahrradflucht) <mail@mathiswiehl.de>"
+  ]
+}

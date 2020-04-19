@@ -1,0 +1,49 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+pan:
+  list: one
+  name: Pan 
+  link: https://www.amazon.com/Utopia-Kitchen-Inch-Nonstick-Frying/dp/B073WF2JMD/ref=sr_1_4?dchild=1&keywords=pan&qid=1587240260&sr=8-4
+  note: Fine with any size
+  visibility: 0
+  gifted_at: null
+
+sweatshirt:
+  list: one
+  name: Sweatshirt
+  link: https://www.amazon.com/Hanes-V-Notch-Pullover-Sweatshirt-Splendor/dp/B00ZUNGRD6/ref=sr_1_5?dchild=1&keywords=sweatshirt&qid=1587242250&sr=8-5
+  note: Size L
+  visibility: 0
+  gifted_at: null
+
+shoes:
+  list: one
+  name: Nike Shoes
+  link: https://www.amazon.com/Nike-Revolution-Running-Platinum-Dark-Regular/dp/B07NLVR4JQ/ref=sr_1_2?dchild=1&keywords=nike+shoes&qid=1587242324&sr=8-2
+  note: Size 10, I like black or blue!
+  visibility: 0
+  gifted_at: null
+
+fishing_pole:
+  list: one
+  name: Fishing Pole
+  link: 
+  note: 
+  visibility: 1
+  gifted_at: null
+
+surprise_trip:
+  list: one
+  name: Fishing Pole
+  link: 
+  note: 
+  visibility: 1
+  gifted_at: null
+
+personalized_cup:
+  list: one
+  name: Personalized Cup
+  link: 
+  note: 
+  visibility: 0
+  gifted_at: <%= Date.yesterday.strftime("%Y-%m-%d") %>
