@@ -2,17 +2,14 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-.public-table {
+.public {
   display: grid;
   grid-template-columns:
-  minmax(20px, 0.33fr)
-  minmax(150px, 1.67fr)
-  minmax(50px, 1fr)
-  minmax(150px, 1fr)
-  minmax(50px, 1fr)
-  minmax(50px, 1fr);
+    minmax(20px, 0.33fr) minmax(150px, 1.67fr) minmax(50px, 1fr) minmax(150px, 1fr) minmax(50px, 1fr) minmax(50px, 1fr);
 
-  > thead, tbody, tr {
+  >thead,
+  tbody,
+  tr {
     display: contents;
   }
 
