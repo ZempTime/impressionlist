@@ -1,4 +1,4 @@
-<table class="public bg-white rounded-t-lg">
+<table class="public-list bg-white rounded-t-lg">
   <thead>
     <tr>
       <th class="pt-6 pb-6 font-semibold text-gray-800 text-sm rounded-tl-lg"></th>
@@ -26,25 +26,25 @@
       </td>
       <td class="text-sm">
         <p class="flex inline-flex align-center text-gray-600">
-          <%= render_svg "icons/conversation", styles: "fill-current text-gray-600 h-5 w-5 pr-1", title: "note added" %>
+          <%= render_svg_tag "icons/conversation", styles: "fill-current text-gray-600 h-5 w-5 pr-1", title: "note added" %>
           has comments
         </p>
         <% if item.note? %>
         <p class="flex inline-flex align-center text-gray-600">
-          <%= render_svg "icons/checkmark-outline", styles: "fill-current text-gray-600 h-5 w-5 pr-1", title: "note added" %>
+          <%= render_svg_tag "icons/checkmark-outline", styles: "fill-current text-gray-600 h-5 w-5 pr-1", title: "note added" %>
           note added
         </p>
         <% end %>
         <% if item.link? %>
         <p class="flex inline-flex align-center text-gray-600">
-          <%= render_svg "icons/link", styles: "fill-current text-gray-600 h-5 w-5 pr-1", title: "note added" %>
+          <%= render_svg_tag "icons/link", styles: "fill-current text-gray-600 h-5 w-5 pr-1", title: "note added" %>
           link available
         </p>
         <% end %>
       </td>
       <td class="">
         <p class="flex inline-flex align-center text-gray-600">
-          <%= render_svg "icons/user-group", styles: "fill-current text-gray-600 h-5 w-5 mt-1 pr-1", title: "note added" %>
+          <%= render_svg_tag "icons/user-group", styles: "fill-current text-gray-600 h-5 w-5 mt-1 pr-1", title: "note added" %>
           public
         </p>
       </td>
