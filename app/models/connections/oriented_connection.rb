@@ -17,6 +17,16 @@ class Connections::OrientedConnection
     end
   end
 
+  def approvable?
+    if oriented_from == :one
+      [:one_deny_two, :two_pending_one].include?(connection.status.to_sym) ? true : false
+    elsif oriented_from == :two
+      [:two_deny_one, :one_pending_two].include?(connection.status.to_sym) ? true : false
+    else
+      false
+    end
+  end
+
   def user_requested?
     if oriented_from == :one
       connection.one_pending_two? ? true : false

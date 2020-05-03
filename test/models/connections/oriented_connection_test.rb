@@ -68,6 +68,28 @@ class Connections::OrientedConnectionTest < ActiveSupport::TestCase
     refute oc.other_requested?
   end
 
+  # approvable?
+  test "approvable? true when user :one and :two_pending_one" do
+    oc = Connections::OrientedConnection.new(@user_1, @c2_pending_1)
+    assert oc.approvable?
+  end
+  test "approvable? true when user :one and :one_deny_two" do 
+    oc = Connections::OrientedConnection.new(@user_1, @c1_deny_2)
+    assert oc.approvable?
+  end
+  test "approvable? true when user :two and :one_pending_two" do
+    oc = Connections::OrientedConnection.new(@user_2, @c1_pending_2)
+    assert oc.approvable?
+  end
+  test "approvable? true when user :two and :two_deny_one" do
+    oc = Connections::OrientedConnection.new(@user_6, @c2_deny_1)
+    assert oc.approvable?
+  end
+  test "approvable? false otherwise" do
+    oc = Connections::OrientedConnection.new(@user_1, @cfriends)
+    refute oc.approvable?
+  end
+
   # friends?
   test "friends returns true when connection friends" do
     oc = Connections::OrientedConnection.new(@user_3, @cfriends)

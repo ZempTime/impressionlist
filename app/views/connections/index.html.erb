@@ -1,22 +1,22 @@
 <h2>Active</h2>
 <ul>
-  <% @presenter.treasured.each do |c| %>
-    <li><%= c.other_name %> | View</li>
+  <% @presenter.treasured.each do |oc| %>
+    <li><%= oc.other_name %> | View</li>
   <% end %>
 </ul>
 <ul>
-  <% @presenter.active.each do |c| %>
-    <li><%= c.other_name %> Treasure | View</li>
+  <% @presenter.active.each do |oc| %>
+    <li><%= oc.other_name %> Treasure | View</li>
   <% end %>
 </ul>
 
 <h2>Pending</h2>
 <ul>
-  <% @presenter.pending.each do |c| %>
+  <% @presenter.pending.each do |oc| %>
     <li>
-      <%= c.other_name %>
-      <% if c.other_requested? %>
-        Accept | Delete | 
+      <%= oc.other_name %>
+      <% if oc.other_requested? %>
+        <%= render partial: "connections/shared/approve", locals: {connection: oc.connection} %>| Delete | 
       <% end%>
       View
     </li>
@@ -25,10 +25,10 @@
 
 <h2>Deleted</h2>
 <ul>
-  <% @presenter.deleted.each do |c| %>
+  <% @presenter.deleted.each do |oc| %>
     <li>
-      <%= c.other_name %>
-      <% if c.other_requested? %>
+      <%= oc.other_name %>
+      <% if oc.other_requested? %>
         Accept |
       <% end%>
       View
