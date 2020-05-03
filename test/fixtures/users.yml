@@ -4,8 +4,66 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+
+user_1:
+  id: 1
+  username: gyoan
+  realname: Gyula Ioan
+  email: user1@example.org
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+user_2:
+  id: 2
+  username: tatread
+  realname: Tatianna Mairead
+  email: user2@example.org
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+user_3:
+  id: 3
+  username: eckdie
+  realname: Eckbert Addie
+  email: user3@example.org
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+user_4:
+  id: 4
+  username: findavi
+  realname: Finnuala Madhavi
+  email: user4@example.org
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+user_5:
+  id: 5
+  username: perkur
+  realname: Perle Shakur
+  email: user5@example.org
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+user_6:
+  id: 6
+  username: antgreet
+  realname: Antoninus Greet
+  email: user6@example.org
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+user_7:
+  id: 7
+  username: damino
+  realname: David Beniamino
+  email: user7@example.org
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+user_8:
+  id: 8
+  username: demeen
+  realname: Demetria Praveen
+  email: user8@example.org
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+user_9:
+  id: 9
+  username: abetianus
+  realname: Abeba Gratianus
+  email: user9@example.org
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

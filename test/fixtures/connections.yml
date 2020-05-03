@@ -1,0 +1,50 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+c1_pending_2:
+  user_one_id: 1
+  user_two_id: 2
+  status: 0
+  one_treasured_at:
+  two_treasured_at:
+
+c2_pending_1:
+  user_one_id: 1
+  user_two_id: 3
+  status: 1
+  one_treasured_at:
+  two_treasured_at:
+
+c1_accept_2:
+  user_one_id: 1
+  user_two_id: 4
+  status: 2
+  one_treasured_at:
+  two_treasured_at:
+
+c1_deny_2:
+  user_one_id: 1
+  user_two_id: 5
+  status: 3
+  one_treasured_at:
+  two_treasured_at:
+
+c2_deny_1:
+  user_one_id: 1
+  user_two_id: 6
+  status: 4
+  one_treasured_at:
+  two_treasured_at:
+
+c1_treasure_2:
+  user_one_id: 1
+  user_two_id: 7
+  status: 2
+  one_treasured_at:
+  two_treasured_at: 2020-04-25 15:32:58
+
+c2_treasure_1:
+  user_one_id: 1
+  user_two_id: 8
+  status: 2
+  one_treasured_at: 2020-04-25 15:32:58
+  two_treasured_at:

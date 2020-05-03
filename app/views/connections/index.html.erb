@@ -1,0 +1,9 @@
+<ul>
+  <% @connections.each do |connection| %>
+    <li>
+      <%= connection.user_one.username %>
+      <%= connection.user_two.username %>
+      <%= connection.status.to_s %>
+    </li>
+  <% end %>
+</ul>

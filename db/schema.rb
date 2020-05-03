@@ -10,20 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_25_002647) do
+ActiveRecord::Schema.define(version: 2020_04_25_203258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "connections", force: :cascade do |t|
+    t.integer "status"
+    t.datetime "one_treasured_at"
+    t.datetime "two_treasured_at"
+    t.text "log"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_one_id"
+    t.bigint "user_two_id"
+    t.index ["user_one_id"], name: "index_connections_on_user_one_id"
+    t.index ["user_two_id"], name: "index_connections_on_user_two_id"
+  end
+
   create_table "items", force: :cascade do |t|
-    t.integer "list_id"
     t.string "name"
     t.string "link"
     t.string "note"
     t.integer "visibility", default: 0
     t.datetime "gifted_at"
+    t.bigint "list_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_id"], name: "index_items_on_list_id"
   end
 
   create_table "lists", force: :cascade do |t|
@@ -45,4 +59,7 @@ ActiveRecord::Schema.define(version: 2020_04_25_002647) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "connections", "users", column: "user_one_id"
+  add_foreign_key "connections", "users", column: "user_two_id"
+  add_foreign_key "items", "lists"
 end
