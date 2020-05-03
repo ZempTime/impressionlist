@@ -1,5 +1,5 @@
 class ConnectionsController < ApplicationController
   def index
-    @connections = current_user.connections
+    @presenter = Connections::IndexPresenter.new(current_user)
   end
 end

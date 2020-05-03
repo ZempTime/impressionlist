@@ -1,9 +1,37 @@
+<h2>Active</h2>
 <ul>
-  <% @connections.each do |connection| %>
+  <% @presenter.treasured.each do |c| %>
+    <li><%= c.other_name %> | View</li>
+  <% end %>
+</ul>
+<ul>
+  <% @presenter.active.each do |c| %>
+    <li><%= c.other_name %> Treasure | View</li>
+  <% end %>
+</ul>
+
+<h2>Pending</h2>
+<ul>
+  <% @presenter.pending.each do |c| %>
     <li>
-      <%= connection.user_one.username %>
-      <%= connection.user_two.username %>
-      <%= connection.status.to_s %>
+      <%= c.other_name %>
+      <% if c.other_requested? %>
+        Accept | Delete | 
+      <% end%>
+      View
+    </li>
+  <% end %>
+</ul>
+
+<h2>Deleted</h2>
+<ul>
+  <% @presenter.deleted.each do |c| %>
+    <li>
+      <%= c.other_name %>
+      <% if c.other_requested? %>
+        Accept |
+      <% end%>
+      View
     </li>
   <% end %>
 </ul>
