@@ -1,6 +1,6 @@
-class Connections::Approval
+class Connections::Denial
   include ActiveModel::Validations
-  validate :approvable_status
+  validate :deniable_status
 
   attr_accessor :user, :oriented_connection, :connection
 
@@ -12,8 +12,8 @@ class Connections::Approval
 
   def save
     if valid?
-      connection.status = :friends
-      connection.append_log("user #{oriented_connection.oriented_from} approved to become friends\n")
+      connection.status = oriented_connection.oriented_from == :one ? :one_deny_two : :two_deny_one
+      connection.append_log("user #{oriented_connection.oriented_from} denied connection\n")
       connection.save
       true
     else
@@ -22,8 +22,8 @@ class Connections::Approval
   end
 
   protected
-    def approvable_status
-      unless oriented_connection.approvable?
+    def deniable_status
+      unless oriented_connection.deniable?
         errors.add(:connection, "This connection isn't one that can be approved right now")
       end
     end

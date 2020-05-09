@@ -27,6 +27,16 @@ class Connections::OrientedConnection
     end
   end
 
+  def deniable?
+    if oriented_from == :one
+      [:friends, :two_pending_one].include?(connection.status.to_sym) ? true : false
+    elsif oriented_from == :two
+      [:friends, :one_pending_two].include?(connection.status.to_sym) ? true : false
+    else
+      false
+    end
+  end
+
   def user_requested?
     if oriented_from == :one
       connection.one_pending_two? ? true : false

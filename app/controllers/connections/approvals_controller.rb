@@ -1,5 +1,5 @@
 class Connections::ApprovalsController < ApplicationController
-  before_action :set_connection
+  include ConnectionScoped
 
   def create
     @approval = Connections::Approval.new(current_user, @connection)
@@ -9,9 +9,4 @@ class Connections::ApprovalsController < ApplicationController
       flash[:alert] = @approval.errors
     end
   end
-
-  protected
-    def set_connection
-      @connection = current_user.connections.where(id: params[:connection_id]).first
-    end
 end

@@ -2,11 +2,17 @@
 <ul>
   <% @presenter.treasured.each do |oc| %>
     <li><%= oc.other_name %> | View</li>
+    <% if oc.deniable? %>
+      <%= render partial: "connections/shared/deny", locals: {connection: oc.connection} %> |
+    <% end%>
   <% end %>
 </ul>
 <ul>
   <% @presenter.active.each do |oc| %>
     <li><%= oc.other_name %> Treasure | View</li>
+    <% if oc.deniable? %>
+      <%= render partial: "connections/shared/deny", locals: {connection: oc.connection} %> |
+    <% end%>
   <% end %>
 </ul>
 
@@ -15,8 +21,11 @@
   <% @presenter.pending.each do |oc| %>
     <li>
       <%= oc.other_name %>
-      <% if oc.other_requested? %>
-        <%= render partial: "connections/shared/approve", locals: {connection: oc.connection} %>| Delete | 
+      <% if oc.approvable? %>
+        <%= render partial: "connections/shared/approve", locals: {connection: oc.connection} %> |
+      <% end%>
+      <% if oc.deniable? %>
+        <%= render partial: "connections/shared/deny", locals: {connection: oc.connection} %> |
       <% end%>
       View
     </li>
@@ -28,8 +37,8 @@
   <% @presenter.deleted.each do |oc| %>
     <li>
       <%= oc.other_name %>
-      <% if oc.other_requested? %>
-        Accept |
+      <% if oc.approvable? %>
+        <%= render partial: "connections/shared/approve", locals: {connection: oc.connection} %> |
       <% end%>
       View
     </li>
