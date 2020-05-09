@@ -1,0 +1,25 @@
+<h1>Create Connection</h1>
+
+<p>Enter email of user you'd like to connect with</p>
+
+<% if @connection.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= I18n.t("errors.messages.not_saved",
+                 count: @connection.errors.count,
+                 resource: @connection.class.model_name.human.downcase)
+       %>
+    </h2>
+    <ul>
+      <% @connection.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @connection, url: connections_path, method: :POST, as: :connection do |f| %>
+  <%= f.email_field :other_user_email%>
+
+  <%= f.submit "Connect" %>
+<% end%>
